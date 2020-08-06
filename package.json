@@ -1,5 +1,5 @@
 {
-  "name": "ding-bot",
+  "name": "@yuyuyzl/ding-bot",
   "version": "1.0.0",
   "description": "Dingtalk bot api with cqhttp-like methods.",
   "main": "index.js",
@@ -11,6 +11,7 @@
     "dingtalk",
     "bot"
   ],
+  "files": ["index.js","package.json"],
   "author": "yuyuyzl",
   "license": "ISC",
   "dependencies": {
