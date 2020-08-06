@@ -12,12 +12,11 @@ const onList=[];
 app.use(bodyparser());
 
 app.use(async (ctx,next)=>{
-    console.log(ctx.url);
-    console.log(ctx.request.body);
     onList.forEach(o=>o({
         ...ctx.request.body,
         isDingtalk:true,
         message:ctx.request.body.text.content,
+        groupName:ctx.url.substr(1),
     }));
     //await new Promise(resolve => setTimeout(resolve,3000));
     ctx.body=JSON.stringify({
@@ -30,7 +29,7 @@ _bot.listen=(port)=>app.listen(port);
 _bot.on=(listener,callback)=>onList.push(callback);
 
 _bot.send_msg=(args)=>{
-    console.log(args);
+    //console.log(args);
     if(typeof args.message==='string'){
         args.message={
             "msgtype": "text",
