@@ -1,0 +1,21 @@
+{
+  "name": "ding-bot",
+  "version": "1.0.0",
+  "description": "Dingtalk bot api with cqhttp-like methods.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pierce": "./pierced/mac_64/ding -config=./pierced/mac_64/ding.cfg -subdomain=tweetoaster 8080"
+  },
+  "keywords": [
+    "dingtalk",
+    "bot"
+  ],
+  "author": "yuyuyzl",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0"
+  }
+}
