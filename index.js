@@ -37,7 +37,8 @@ _bot.send_msg=(args)=>{
         }
     }
     console.log(args.message);
-    axios.post(args.group||args.sessionWebhook,args.message).then(r=>console.log(r.data));
+    if(args.group_id&&!args.group_id.startsWith("http"))args.group_id="https://oapi.dingtalk.com/robot/send?access_token="+args.group_id;
+    axios.post(args.group_id||args.sessionWebhook,args.message).then(r=>console.log(r.data));
 }
 
 _bot.send_group_msg=_bot.send_msg;

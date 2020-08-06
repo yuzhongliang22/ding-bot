@@ -6,7 +6,7 @@ bot.on("message",context=>{
 });
 
 bot("send_group_msg",{
-    group:"https://oapi.dingtalk.com/robot/send?access_token=95b5388736bf0a4e610458a4a4b8aa8fd6d01c6a80170d10a4f142ec965633ca",
+    group_id:"https://oapi.dingtalk.com/robot/send?access_token=95b5388736bf0a4e610458a4a4b8aa8fd6d01c6a80170d10a4f142ec965633ca",
     message:"【dingbot test on!】",
 })
 // bot("send_group_msg",{
