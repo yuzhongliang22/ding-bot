@@ -31,9 +31,20 @@ _bot.on=(listener,callback)=>onList.push(callback);
 _bot.send_msg=(args)=>{
     //console.log(args);
     if(typeof args.message==='string'){
-        args.message={
-            "msgtype": "text",
-            "text": {content:args.message,},
+        let translateCQCode=args.message.replace(/\[CQ:image,file=([^\]]*)\]/g,"![screenshot]($1)");
+        if(translateCQCode===args.message) {
+            args.message={
+                "msgtype": "text",
+                "text": {content:args.message,},
+            }
+        }else {
+            translateCQCode=translateCQCode.replace(/\n/g,"\n\n");
+            args.message={
+                "msgtype": "markdown",
+                "markdown": {
+                    text: translateCQCode, title: translateCQCode
+                }
+            }
         }
     }
     console.log(args.message);
